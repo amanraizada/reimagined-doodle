@@ -23,10 +23,14 @@ while True:
     for i in urls:
         while True:
             try:
+                print(">> OPENING : " + i[:15])
                 driver.get(i)
+                print(">> SUCCESS")
                 # driver.find_element_by_tag_name("body").send_keys(Keys.CONTROL +"t")
                 time.sleep(1)
                 break
             except:
+                print(">> ERROR WHILE : " + i[:15])
                 continue
+    print(">> SLEEPING 60 SECONDS")
     time.sleep(60)
