@@ -20,7 +20,7 @@ driver = webdriver.Chrome(chrome_options=chrome_options)
 # driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=chrome_options)
 
 while True:
-    for i in urls[:2]:
+    for i in urls:
         while True:
             try:
                 driver.get(i)
