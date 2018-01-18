@@ -24,7 +24,12 @@ urls = url.text
 urls = urls.split("\n")
 
 for i in urls:
-    thread = threading.Thread(target=OpenWeb, args=([i]))
-    thread.start()
-    time.sleep(10)
+    while True:
+        try:
+            thread = threading.Thread(target=OpenWeb, args=([i]))
+            thread.start()
+            time.sleep(10)
+            break
+        except:
+            continue
 
