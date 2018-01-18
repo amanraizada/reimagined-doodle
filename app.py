@@ -8,9 +8,13 @@ import time,sys,requests,threading
 print("STARTING")
 def OpenWeb(u):
     print(u)
-    chrome_options = Options()  
-    chrome_options.binary_location = r"/app/.apt/usr/bin/google-chrome"
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+    while True:
+        chrome_options = Options()  
+        chrome_options.binary_location = r"/app/.apt/usr/bin/google-chrome"
+        driver = webdriver.Chrome(chrome_options=chrome_options)
+        break
+    except:
+        continue
     # driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=chrome_options)
     while True:
         try:
